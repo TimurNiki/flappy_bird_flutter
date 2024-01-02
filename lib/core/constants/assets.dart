@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 @immutable
 class Assets {
   const Assets._();
+  
   // Background images
   static const String background = 'assets/images/background.png';
   static const String ground = 'assets/images/ground.png';

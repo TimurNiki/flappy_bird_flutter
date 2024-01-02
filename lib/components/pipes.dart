@@ -1,7 +1,8 @@
 import 'dart:math';
-
 import 'package:flame/components.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flappy_bird/components/pipe.dart';
+import 'package:flappy_bird/core/constants/constants.dart';
 import 'package:flappy_bird/core/constants/game_config.dart';
 import 'package:flappy_bird/core/enums/enums.dart';
 import 'package:flappy_bird/game/flappy_bird_game.dart';
@@ -25,12 +26,22 @@ class Pipes extends PositionComponent with HasGameRef<FlappyBirdGame> {
     ]);
   }
 
+void updateScore() {
+    gameRef.bird.score += 1;
+    FlameAudio.play(Assets.point);
+  }
+
   @override
   void update(double dt) {
     super.update(dt);
     position.x == GameConfig.gameSpeed * dt;
     if (position.x <-10 ){
       removeFromParent();
+       updateScore();
+    }
+    if (gameRef.isHit) {
+      removeFromParent();
+      gameRef.isHit = false;
     }
   }
 }
