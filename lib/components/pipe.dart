@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
-import 'package:flappy_bird/core/constants/index.dart';
+import 'package:flappy_bird/core/constants/constants.dart';
 import 'package:flappy_bird/core/enums/enums.dart';
 import 'package:flappy_bird/game/flappy_bird_game.dart';
 
